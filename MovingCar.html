@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style >
+
+      .back{
+        background-image: url("view.jpg");
+        height: 450px;
+      }
+
+      .road{
+        background-image: url("road.jpg");
+        height: 200px;
+      }
+
+      #srt{
+        background-color: skyblue;
+        width: 60px;
+        height: 35px;
+        padding: 5px;
+        border-radius: 10px 10px 10px 10px;
+         cursor: pointer;
+         margin: 10px;
+      }
+
+      #srt:hover{
+        background-color: orange;
+      }
+
+      #stp{
+        background-color: skyblue;
+        width: 60px;
+        height: 35px;
+        padding: 5px;
+        border-radius: 10px 10px 10px 10px;
+         cursor: pointer;
+         margin: 10px;
+      }
+
+      #stp:hover{
+        background-color: orange;
+      }
+
+    </style>
+  </head>
+  <body>
+
+   <div class="back">
+
+    <center><button id="srt" onclick="run()">Start</button>
+    <button id="stp" onclick="stop()">Stop</button></center>
+
+   </div>
+   <div class="road">
+      <img id="img" src="car.png" width="200px" height="200px;">
+   </div>
+
+
+     <script>
+
+       m=0;
+       var y;
+        function run(){
+          y=setInterval(start,10);
+
+
+        function start(){
+          if (m==1150) {
+            clearInterval(y);
+            m=0;
+          }
+          else {
+            m=m+5;
+           var x=document.getElementById('img');
+           x.style.marginLeft=m+"px";
+        }
+      }
+    }
+
+    function stop(){
+      clearInterval(y);
+    }
+     </script>
+ </body>
+</html>
